@@ -37,9 +37,17 @@ All you need to run this project is to install docker.
 
 The instructions here are only for a local environment, if you want to deploy please read the documentation for [cookiecutter-django](https://cookiecutter-django.readthedocs.io/en/latest/index.html).
 
-1. Set the environment variable COMPOSE_FILE pointing to local.yml, in the terminal, like this::
+1. Set the environment variable `COMPOSE_FILE` pointing to `local.yml`. In a Unix shell run:
    ```bash
-   $ export COMPOSE_FILE=local.yml
+   export COMPOSE_FILE=local.yml
+   ```
+   In PowerShell use:
+   ```powershell
+   $Env:COMPOSE_FILE = "local.yml"
+   ```
+   Or in the Windows Command Prompt:
+   ```cmd
+   set COMPOSE_FILE=local.yml
    ```
 2. On a terminal at the project root and run the following for local development:
    ```bash
@@ -53,9 +61,10 @@ The instructions here are only for a local environment, if you want to deploy pl
 
 ## Environment Variables
 
-You only have to change the values inside the .env folder as you wish.
+Environment variables live in the `.envs/.local/` folder. Update these files for local development:
 
-`.env`
+- `.envs/.local/.django` – Django and Celery settings.
+- `.envs/.local/.postgres` – database credentials.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
